@@ -29,16 +29,15 @@ type alias Config =
 
 
 type alias Model =
-    { zone : Time.Zone
-    , time : Time.Posix
+    { content : String
     , uid : String
     }
 
 
 init : Realm.Flag Config -> ( Model, Cmd Msg )
 init flag =
-    ( Model Time.utc (Time.millisToPosix 0) flag.uid
-    , Task.perform AdjustTimeZone Time.here
+    ( Model "Hello World!" flag.uid
+    , Cmd.none
     )
 
 
@@ -53,16 +52,7 @@ type Msg
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    case msg of
-        Tick newTime ->
-            ( { model | time = newTime }
-            , Cmd.none
-            )
-
-        AdjustTimeZone newZone ->
-            ( { model | zone = newZone }
-            , Cmd.none
-            )
+    ( model, Cmd.none )
 
 
 
@@ -70,8 +60,8 @@ update msg model =
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
-    Time.every 1000 Tick
+subscriptions _ =
+    Sub.none
 
 
 
@@ -82,18 +72,8 @@ view : Model -> Html Msg
 view model =
     view2 model
         |> Realm.wrapped model.uid
-
+g
 
 view2 : Model -> List (Html Msg)
 view2 model =
-    let
-        hour =
-            String.fromInt (Time.toHour model.zone model.time)
-
-        minute =
-            String.fromInt (Time.toMinute model.zone model.time)
-
-        second =
-            String.fromInt (Time.toSecond model.zone model.time)
-    in
-    [ h1 [] [ text (hour ++ ":" ++ minute ++ ":" ++ second) ] ]
+    [ h1 [] [ text model.content ] ]

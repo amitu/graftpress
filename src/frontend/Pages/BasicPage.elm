@@ -1,4 +1,4 @@
-module Pages.BasicPage exposing (Config, Model, Msg(..), init, main, subscriptions, update, view, view2, viewInput, viewValidation)
+module Pages.BasicPage exposing (Config, Model, Msg(..), init, main, subscriptions, update, view, view2)
 
 import Browser
 import Html as H exposing (..)
@@ -26,16 +26,13 @@ main =
 
 
 type alias Model =
-    { name : String
-    , password : String
-    , passwordAgain : String
-    , config : Config
+    { config : Config
     }
 
 
 init : Realm.Flag Config -> ( Model, Cmd Msg )
 init flag =
-    ( Model "" "" "" flag.config
+    ( Model flag.config
     , Realm.loadWidget
         (JE.object
             [ ( "uid", JE.string flag.config.body.uid )
@@ -51,22 +48,12 @@ init flag =
 
 
 type Msg
-    = Name String
-    | Password String
-    | PasswordAgain String
+    = String
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    case msg of
-        Name name ->
-            ( { model | name = name }, Cmd.none )
-
-        Password password ->
-            ( { model | password = password }, Cmd.none )
-
-        PasswordAgain password ->
-            ( { model | passwordAgain = password }, Cmd.none )
+    ( model, Cmd.none )
 
 
 
@@ -93,28 +80,8 @@ view2 model =
     [ Realm.child model.config.body
 
     -- , Realm.child model.config.footer
-    , div
-        [ H.id "child3" ]
-        [ viewInput "text" "Name" model.name Name
-        , viewInput "password" "Password" model.password Password
-        , viewInput "password" "Re-enter Password" model.passwordAgain PasswordAgain
-        , viewValidation model
-        ]
+    --    , div
+    --        [ H.id "child3" ]
+    --        [ text (String model)
+    --        ]
     ]
-
-
-viewInput : String -> String -> String -> (String -> msg) -> Html msg
-viewInput t p v toMsg =
-    input [ type_ t, placeholder p, value v, onInput toMsg ] []
-
-
-viewValidation : Model -> Html msg
-viewValidation model =
-    if model.password /= model.passwordAgain then
-        div [ style "color" "red" ] [ text "Passwords do not match!" ]
-
-    else if String.length model.password < 8 then
-        div [ style "color" "red" ] [ text "Passwords' minimum length is 8" ]
-
-    else
-        div [ style "color" "green" ] [ text "OK" ]
