@@ -1,0 +1,4 @@
+{
+     "static_dir": "src/static",
+     "loader_file": "src/static/realm/elatest/loader.js"
+}
