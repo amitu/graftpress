@@ -72,7 +72,7 @@ view : Model -> Html Msg
 view model =
     view2 model
         |> Realm.wrapped model.uid
-g
+
 
 view2 : Model -> List (Html Msg)
 view2 model =
