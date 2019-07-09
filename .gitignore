@@ -1,7 +1,9 @@
 target
 __pycache__/
+*.lock
+node_modules/
 *.pyc
 elm-stuff/
 .idea/
-src/static/realm/elatest/Widgets/BWidgets/*
-src/static/realm/elatest/Pages/*
+src/static/realm/elatest/Widgets/
+src/static/realm/elatest/Pages/

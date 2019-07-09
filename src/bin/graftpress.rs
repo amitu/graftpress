@@ -2,4 +2,5 @@
 extern crate realm;
 extern crate graftpress;
 
-realm::realm!{graftpress::forward::magic}
+use graftpress::forward::magic;
+realm::realm!{magic}
