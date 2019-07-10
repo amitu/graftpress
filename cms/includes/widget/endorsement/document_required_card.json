@@ -1,8 +1,0 @@
-{
-  "id": "_amitu$realm$Widget_Responsive_Endorsement_DocumentRequiredCard",
-  "config":
-    {
-      "title": "Document Required",
-      "detail": ["Document verification required", "Photo verification required"]
-    }
-}

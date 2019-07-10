@@ -1,9 +1,0 @@
-{
-  "id": "_amitu$realm$Widget_ColumnItem_HeroThreeStep",
-  "config": {
-      "common": {
-              "$ref": "common",
-              "default": null
-      }
-  }
-}

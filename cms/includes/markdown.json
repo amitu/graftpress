@@ -1,8 +1,0 @@
-{
-  "id": "_amitu$realm$Widget_Responsive_Generic_Markdown",
-  "config": {
-    "body": {
-      "$ref": "body"
-    }
-  }
-}
