@@ -1,0 +1,16 @@
+{
+  "title": "title",
+  "permission": "permission",
+  "widget": {
+    "id": "Pages.BasicPage",
+    "config": {
+      "footer": {},
+      "header": {},
+      "body": {
+        "id": "Widgets.BWidgets.TextWidget",
+        "config": {}
+      }
+    }
+  }
+}
+

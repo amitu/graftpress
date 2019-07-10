@@ -1,0 +1,11 @@
+{
+  "body": {
+    "$ref": "body"
+  },
+  "footer": {
+    "$ref": "footer"
+  },
+  "header": {
+    "$ref": "header"
+  }
+}

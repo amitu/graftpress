@@ -52,13 +52,20 @@ pub fn serve( req: &realm::Request, url: &str) -> realm::Result {
         }
     };
 
-    //println!("content {:?}", content);
+    println!("content {:?}", content);
     let mut proj_dir = env::current_dir().expect("could not find current dir");
+
     let context =
         DirContext::new(proj_dir.join("cms/includes"));
-    let c: C = serde_json::from_value(graft::convert(&content, &context)?)?;
+
+    //println!("context {:?}", context);
+    let v = graft::convert(&content, &context)?;
+    let c: C = serde_json::from_value(v)?;
+
     println!("c: {:#?}", &c);
+
     let spec = serde_json::from_value(c.widget)?;
+    //println!("spec {}", spec);
 
     realm::HTML::new().title("index").render_to_response(spec)
 }

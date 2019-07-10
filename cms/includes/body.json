@@ -1,0 +1,11 @@
+{
+  "title": {
+    "$ref": "title"
+  },
+  "permission": {
+    "$ref": "permission"
+  },
+  "widget": {
+    "$ref": "widget"
+  }
+}
