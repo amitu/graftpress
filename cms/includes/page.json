@@ -1,0 +1,22 @@
+{
+  "title": {
+    "$ref": "title"
+  },
+  "permission": {
+    "$ref": "permission"
+  },
+  "widget": {
+    "id": "_amitu$realm$Widget_Layout_FullWidth",
+    "config": {
+      "header": {
+        "$ref": "header"
+      },
+      "children": {
+        "$ref": "content[]"
+      },
+      "footer": {
+        "$ref": "footer"
+      }
+    }
+  }
+}

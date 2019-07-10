@@ -1,0 +1,20 @@
+{
+   "id": "_amitu$realm$Widget_Responsive_Car_JustTitle",
+      "config": {
+        "title": {
+            "$ref": "title",
+            "default": ""
+          },
+        "theme": {
+            "$ref": "theme",
+            "default": ""
+          },
+         "common": {
+              "$ref": "common",
+              "default": null
+          },
+
+        "tracker_id": "Px49XztP81PP71ui7Ma1SQ",
+        "user_id": null
+      }
+}

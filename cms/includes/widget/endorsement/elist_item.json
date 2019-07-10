@@ -1,0 +1,17 @@
+{
+  "id": {
+    "$ref": "id"
+  },
+  "title": {
+    "$ref": "title"
+  },
+  "subtitle": {
+    "$ref": "subtitle"
+  },
+  "value": {
+    "$ref": "value"
+  },
+  "action": {
+    "$ref": "action"
+  }
+}

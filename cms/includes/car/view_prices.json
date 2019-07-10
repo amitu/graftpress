@@ -1,0 +1,10 @@
+
+{
+  "id": "_amitu$realm$Widget_Responsive_Car_ViewPrice",
+       "config": {
+          "common": {
+              "$ref": "common",
+              "default": null
+          }
+          }
+}

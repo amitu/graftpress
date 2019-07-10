@@ -1,0 +1,11 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Car_Fraud",
+  "config": {
+    "phone": {
+      "$ref": "phone"
+    },
+    "steps": {
+      "$ref": "steps"
+    }
+  }
+}

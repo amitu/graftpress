@@ -1,0 +1,30 @@
+{
+  "grid": {
+    "id": {
+      "$ref": "id",
+      "default": ""
+    },
+    "justifyContent": {
+      "$ref": "justifyContent",
+      "default": "center"
+    },
+    "margin": {
+      "$ref": "margin",
+      "default": null
+    },
+    "padding": {
+      "$ref": "padding",
+      "default": null
+    }
+
+  },
+  "animation": {
+      "$ref": "animation",
+      "default": null
+
+  },
+  "reference-image": {
+    "$ref": "reference-image",
+    "default": null
+  }
+}

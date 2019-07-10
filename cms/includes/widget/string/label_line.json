@@ -1,0 +1,74 @@
+ {
+    "id": "_amitu$realm$Widget_Boxed_FWidget_String_LabelLineInput",
+    "config": {
+      "common": {
+        "name": {
+          "$ref":  "name"
+        },
+        "title": {
+          "$ref":  "title"
+        },
+        "value": {
+          "$ref":  "value"
+        },
+        "fyi": {
+          "$ref": "fyi",
+          "default": false
+        },
+        "description": {
+          "$ref": "description",
+          "default":  ""
+        },
+        "required":{
+          "$ref": "required",
+          "default": false
+        },
+        "max_length": {
+          "$ref":  "max_length",
+          "default": 30
+        },
+        "minLength": {
+          "$ref":  "minLength",
+          "default": 0
+        },
+        "pattern": {
+          "$ref":  "pattern",
+          "default": null
+        },
+        "hidden": {
+          "$ref":  "hidden",
+          "default": false
+        },
+        "secure": {
+          "$ref":  "secure",
+          "default": false
+        },
+        "choices": {
+          "$ref":  "choices[]",
+          "default": []
+        },
+        "examples": {
+          "$ref":  "examples[]",
+          "default": []
+        },
+        "exact": {
+          "$ref":  "exact",
+          "default": null
+        },
+        "placeholder": {
+          "$ref":  "placeholder",
+          "default": "Enter the value"
+        },
+        "showRequiredFlag": {
+          "$ref":  "showRequiredFlag",
+          "default": false
+        },
+        "style": {
+          "$ref":  "style",
+          "default": false
+        }
+      }
+    }
+  }
+
+

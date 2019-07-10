@@ -1,0 +1,14 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Generic_Code",
+  "config": {
+    "filename": {
+      "$ref": "filename"
+    },
+    "language": {
+      "$ref": "language"
+    },
+    "code": {
+      "$ref": "code"
+    }
+  }
+}

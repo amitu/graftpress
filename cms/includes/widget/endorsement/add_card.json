@@ -1,0 +1,14 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Endorsement_EndorsementAddCard",
+  "config": {
+    "id": {
+      "$ref": "id"
+    },
+    "title": {
+      "$ref": "title"
+    },
+    "nextUrl": {
+      "$ref": "nextUrl"
+    }
+  }
+}

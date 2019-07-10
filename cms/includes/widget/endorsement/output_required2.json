@@ -1,0 +1,24 @@
+{
+  "Required": [
+    {
+      "old_Premium": {
+        "amount": 32000
+      },
+      "new_Premium": {
+        "amount": 31000
+      },
+      "is_pay": true,
+      "difference": 1000
+    },
+    [
+      {
+        "name": "Document verification required"
+      },
+      {
+        "name": "Photo verification required"
+      }
+    ],
+    [],
+    []
+  ]
+}

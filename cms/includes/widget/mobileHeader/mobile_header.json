@@ -1,0 +1,17 @@
+{
+    "id": "_amitu$realm$Widget_MobileHeader_Main",
+    "config": {
+        "login_url": {
+            "$ref": "loginURL"
+        },
+        "phone": {
+            "$ref": "phone"
+        },
+        "utm_source": {
+            "$ref": "utmSource"
+        },
+        "tech_origin": {
+            "$ref": "techOrigin"
+        }
+    }
+}

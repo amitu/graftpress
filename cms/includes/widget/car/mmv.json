@@ -1,0 +1,27 @@
+{
+    "id": "_amitu$realm$Widget_Responsive_Car_MMV",
+    "config": {
+        "quote_id": {
+            "$ref": "quoteId"
+        },
+        "registration_number": {
+            "$ref": "regNumber"
+        },
+        "phone": {
+            "$ref": "phone"
+        },
+        "vehicle_details": {
+            "variant_id": "APlHPYK6nf-pV-2L1pOJyA",
+            "image_url": "https://www.acko.com/media/vehicles/Ford/Ford-Mustang/Absolute-Black.png"
+        },
+        "is_verified_phone": {
+            "$ref": "isVerifiedPhone"
+        },
+        "page": {
+            "$ref": "page"
+        },
+        "last_updated_on": {
+            "$ref": "lastUpdatedOn"
+        }
+    }
+}

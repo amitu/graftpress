@@ -1,0 +1,8 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Generic_Table",
+  "config": {
+    "body": {
+      "$ref": "body"
+    }
+  }
+}

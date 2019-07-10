@@ -1,0 +1,11 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Endorsement_EndorsementDetailBody",
+  "config": {
+    "field": {
+      "$ref": "field"
+    },
+    "is_success": {
+      "$ref": "is_success"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "coordinate": {
+    "$ref": "coordinate"
+  },
+  "body": {
+    "$ref": "body"
+  }
+}

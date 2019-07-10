@@ -1,0 +1,16 @@
+{
+    "hello": "world",
+    "main": {
+        "$ref": "main",
+        "default": "yo"
+    },
+    "obj": {
+        "list": {
+            "$ref": "children[]"
+        }
+    },
+    "main2": {
+        "$ref": "main2",
+        "default": "yo2"
+    }
+}

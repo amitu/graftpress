@@ -1,0 +1,11 @@
+{
+  "id": "",
+  "config": {
+    "title": {
+      "$ref": "title"
+    },
+    "subtitle": {
+      "$ref": "subtitle"
+    }
+  }
+}

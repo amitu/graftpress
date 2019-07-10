@@ -1,0 +1,26 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Generic_ImageTagger",
+  "config": {
+    "src": {
+      "$ref": "image"
+    },
+    "height": {
+      "$ref": "height"
+    },
+    "width": {
+      "$ref": "width"
+    },
+    "mode": {
+      "$ref": "mode"
+    },
+    "body": {
+      "$ref": "body"
+    },
+    "vw": {
+     "$ref": "viewwidth"
+    },
+    "tags": {
+      "$ref": "tag[]"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Car_Faq",
+  "config": {
+    "faqs": {
+      "$ref": "faqs",
+      "default": []
+    },
+     "common": {
+              "$ref": "common",
+              "default": null
+          }
+
+  }
+}

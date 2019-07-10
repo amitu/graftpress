@@ -1,0 +1,25 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_VFloat",
+  "config": {
+     "padding": {
+      "$ref": "padding",
+      "default": "initial"
+    },
+    "width": {
+      "$ref": "width",
+      "default": "auto"
+    },
+    "margin": {
+      "$ref": "margin",
+      "default": "auto"
+    },
+    "background_color": {
+      "$ref": "background_color",
+      "default": "inherit"
+    },
+    "children": {
+      "$ref": "content[]"
+    }
+  }
+}
+

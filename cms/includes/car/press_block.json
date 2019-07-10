@@ -1,0 +1,9 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Car_PressBlock",
+          "config": {
+            "common": {
+              "$ref": "common",
+              "default": null
+          }
+          }
+}

@@ -1,0 +1,32 @@
+{
+  "title": {
+    "$ref": "title"
+  },
+  "permission": {
+    "$ref": "permission"
+  },
+  "widget": {
+    "id": "_amitu$realm$Widget_Layout_FullWidth",
+    "config": {
+      "header": {
+        "$ref": "header"
+      },
+      "children": [
+        {
+          "id": "_amitu$realm$Widget_Responsive_Generic_FAQ",
+          "config": {
+            "title": {
+              "$ref": "title"
+            },
+            "items": {
+              "$ref": "faq[]"
+            }
+          }
+        }
+      ],
+      "footer": {
+        "$ref": "footer"
+      }
+    }
+  }
+}

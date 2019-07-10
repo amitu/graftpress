@@ -1,0 +1,16 @@
+{
+  "id": "_amitu$realm$Widget_Boxed_FWidget_String_LabelLineInput",
+  "config" : {
+    "title" : {
+      "$ref": "title"
+    },
+    "value": {
+      "$ref": "value",
+      "default": "Amit U"
+    },
+    "fyi": {
+      "$ref": "fyi",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "question": {
+    "$ref": "question"
+  },
+  "answer": {
+    "$ref": "answer"
+  }
+}

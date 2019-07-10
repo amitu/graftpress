@@ -1,0 +1,43 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Commands",
+  "config": {
+    "commands": [
+      {
+        "id": "gdeploy",
+        "name": "gdeploy command",
+        "command": "/opt/acko/src/scripts/cmd_scripts/gdeploy.sh",
+        "priority": 5,
+        "singleton": true,
+        "makers": [
+          {
+            "Users": "ViewDevStuff"
+          }
+        ]
+      },
+      {
+        "id": "check_pr",
+        "name": "check_pr command",
+        "command": "/opt/acko/src/scripts/cmd_scripts/check_pr.sh",
+        "priority": 5,
+        "singleton": true,
+        "makers": [
+          {
+            "Users": "ViewDevStuff"
+          }
+        ]
+      },
+      {
+        "id": "sh",
+        "name": "sh command",
+        "command": "/bin/sh",
+        "priority": 5,
+        "singleton": false,
+        "makers": [
+          {
+            "Users": "ViewDevStuff"
+          }
+        ]
+      }
+    ]
+  }
+}

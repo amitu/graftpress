@@ -1,0 +1,21 @@
+{
+  "id": "_amitu$realm$Widget_Responsive_Endorsement_EForm",
+  "config": {
+    "form": {
+      "fyi": {
+        "$ref": "fyi[]"
+      },
+      "ui_fields": {
+        "$ref": "ui_fields[]"
+      },
+      "help_text": {
+        "$ref": "help_text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\neiusmod tempor incididunt ut labore et ."
+      }
+    },
+    "output": {
+      "$ref": "output"
+    }
+  }
+}
+

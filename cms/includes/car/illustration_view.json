@@ -1,0 +1,30 @@
+
+{
+  "id": "_amitu$realm$Widget_Responsive_Car_IllustrationsView",
+       "config": {
+           "title": {
+            "$ref": "title",
+            "default": ""
+             },
+          "content": {
+              "$ref": "content",
+              "default": ""
+            },
+          "subtitle": {
+              "$ref": "subtitle",
+              "default": ""
+            },
+          "theme": {
+              "$ref": "theme",
+              "default": "left"
+            },
+          "icon": {
+              "$ref": "icon",
+              "default": ""
+            },
+          "common": {
+              "$ref": "common",
+              "default": null
+          }
+          }
+}

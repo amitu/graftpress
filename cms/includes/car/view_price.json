@@ -1,0 +1,20 @@
+    {
+          "id": "_amitu$realm$Widget_Responsive_Home",
+          "config": {
+            "quotes": [],
+            "advisor_quotes": [],
+            "continue_quotes": [],
+            "policies": [],
+            "mobiles": [],
+            "advisor": true,
+            "buy": true,
+            "user_id": null,
+            "tracker_id": "Px49XztP81PP71ui7Ma1SQ",
+            "utm_source": "",
+             "common": {
+              "$ref": "common",
+              "default": null
+          }
+          }
+
+        }

@@ -1,0 +1,111 @@
+{
+    "id": "_amitu$realm$Widget_Responsive_AckoreClaims_Create",
+    "config": {
+      "perils": [{
+          "id": "peril_id_1",
+          "display": "Peril Title 1",
+          "label": "Please tell us what happened?",
+          "header": "Just answer a few questions to register the claim.",
+          "form": {
+            "question": null,
+            "options": [],
+            "selected": null
+          },
+          "children": ["peril_id_2", "peril_id_3", "peril_id_4"],
+          "parent": null
+        },
+        {
+          "id": "peril_id_2",
+          "display": "Peril Title 2",
+          "label": "Please tell us what happened?",
+          "header": "Peril 2 Header",
+          "form": {
+            "question": "Who is a good Boi?",
+            "options": ["Dog", "You"],
+            "selected": null
+          },
+          "children": ["peril_id_5", "peril_id_6"],
+          "parent": "peril_id_1"
+        },
+        {
+          "id": "peril_id_3",
+          "display": "Peril Title 3",
+          "label": "Please tell us what happened?",
+          "header": "Peril 3 Header",
+          "form": {
+            "question": "Address Type",
+            "options": ["Home", "Office", "Others"],
+            "selected": null
+          },
+          "children": [],
+          "parent": "peril_id_1"
+        },
+        {
+          "id": "peril_id_4",
+          "display": "Peril Title 4",
+          "label": "Please tell us what happened?",
+          "header": "Peril 4 Header",
+          "form": {
+            "question": "Name?",
+            "options": ["Asit", "Others"],
+            "selected": null
+          },
+          "children": ["peril_id_7"],
+          "parent": "peril_id_1"
+        },
+        {
+          "id": "peril_id_5",
+          "display": "Peril Title 5",
+          "label": "Please tell us what happened?",
+          "header": "Peril 5 Header",
+          "form": {
+            "question": "What did dog do to you?",
+            "options": ["Pooped", "Others"],
+            "selected": null
+          },
+          "children": [],
+          "parent": "peril_id_2"
+        },
+        {
+          "id": "peril_id_6",
+          "display": "Peril Title 6",
+          "header": "Peril 6 Header",
+          "label": "Please tell us what happened?",
+          "form": {
+            "question": "What did you do to dog?",
+            "options": ["Beat him", "Others"],
+            "selected": null
+          },
+          "children": [],
+          "parent": "peril_id_2"
+        },
+        {
+          "id": "peril_id_7",
+          "display": "Peril Title 7",
+          "label": "Please tell us what happened?",
+          "header": "Peril 7 Header",
+          "form": {
+            "question": "WHo kept your name?",
+            "options": ["Parents", "GrandParents", "Idiots"],
+            "selected": null
+          },
+          "children": ["peril_id_8"],
+          "parent": "peril_id_4"
+        },
+        {
+          "id": "peril_id_8",
+          "display": "Peril Title 8",
+          "label": "Please tell us what happened?",
+          "header": "Peril 8 Header",
+          "form": {
+            "question": "Do you like your name",
+            "options": ["Yes", "No", "Neutral"],
+            "selected": null
+          },
+          "children": [],
+          "parent": "peril_id_7"
+        }
+      ],
+      "policy_number": "dummy"
+    }
+}
