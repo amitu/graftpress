@@ -1,8 +1,10 @@
 module Markdown exposing (main)
 
 import Browser
+import Css exposing (..)
 import Debug
 import Html exposing (..)
+import Html.Attributes exposing (..)
 import Html.Parser
 import Html.Parser.Util
 import Realm
@@ -83,9 +85,14 @@ view2 : Model -> List (Html Msg)
 view2 model =
     case Html.Parser.run model.config.body of
         Ok lst ->
-            Html.Parser.Util.toVirtualDom lst
+            [ div
+                [ style "color" "green"
+                , style "background-color" "red"
+                , style "height" "90px"
+                , style "width" "100%"
+                ]
+                (Html.Parser.Util.toVirtualDom lst)
+            ]
 
         Err err ->
             [ Html.text <| "things failed: " ++ Debug.toString err ]
-
-
