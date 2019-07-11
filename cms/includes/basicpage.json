@@ -5,8 +5,7 @@
     "id": "Pages.BasicPage",
     "config": {
       "body": {
-        "id": "_amitu$realm$Widget_Responsive_Generic_Markdown",
-        "config": {}
+        "$ref": "body"
       }
     }
   }

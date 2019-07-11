@@ -1,9 +1,0 @@
-{
-    "id": {
-      "$ref": "id"
-    },
-    "config": {
-      "$ref": "config"
-    }
-
-}
