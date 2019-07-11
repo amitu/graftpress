@@ -1,10 +1,11 @@
-module Widgets.BWidgets.TextWidget exposing (main)
+module Markdown exposing (main)
 
 import Browser
+import Debug
 import Html exposing (..)
+import Html.Parser
+import Html.Parser.Util
 import Realm
-import Task
-import Time
 
 
 
@@ -25,29 +26,33 @@ main =
 
 
 type alias Config =
-    {}
+    { body : String
+    }
 
 
 type alias Model =
-    { content : String
+    { config : Config
     , uid : String
     }
 
 
-init : Realm.Flag Config -> ( Model, Cmd Msg )
-init flag =
-    ( Model "Hello World!" flag.uid
-    , Cmd.none
-    )
-
-
-
--- UPDATE
-
-
 type Msg
-    = Tick Time.Posix
-    | AdjustTimeZone Time.Zone
+    = NoOp
+
+
+
+{-
+   init : Realm.Flag Config -> ( Model, Cmd Msg )
+   init flag =
+       ( Model "Hello World!" flag.uid
+       , Cmd.none
+       )
+-}
+
+
+init : Realm.Flag Config -> ( Model, Cmd Msg )
+init c =
+    ( { config = c.config, uid = c.uid }, Cmd.none )
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -76,4 +81,11 @@ view model =
 
 view2 : Model -> List (Html Msg)
 view2 model =
-    [ h1 [] [ text model.content ] ]
+    case Html.Parser.run model.config.body of
+        Ok lst ->
+            Html.Parser.Util.toVirtualDom lst
+
+        Err err ->
+            [ Html.text <| "things failed: " ++ Debug.toString err ]
+
+

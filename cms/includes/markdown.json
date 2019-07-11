@@ -1,5 +1,5 @@
 {
-  "id": "_amitu$realm$Widget_Responsive_Generic_Markdown",
+  "id": "Markdown",
   "config": {
     "body": {
       "$ref": "body"
