@@ -2,11 +2,10 @@
   "title": "title",
   "permission": "permission",
   "widget": {
-    "id": "Pages.BasicPage",
+    "id": "Markdown",
     "config": {
       "body": {
-        "id": "_amitu$realm$Widget_Responsive_Generic_Markdown",
-        "config": {}
+        "$ref": "body"
       }
     }
   }
