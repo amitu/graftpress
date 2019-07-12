@@ -5,6 +5,7 @@ authors = ["nilinswap <nilinswap@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+url = "~1.7.1"
 failure = "0.1.5"
 futures = "~0.1.26"
 hyper = "~0.12.27"
@@ -16,6 +17,8 @@ serde = "~1.0.0"
 serde_derive = "~1.0.0"
 graft = "~0.1.7"
 realm = { path = "/Users/swapnil/forgit/dwelm/realm" }
+itertools = "~0.7.8"
 
-
-
+[dependencies.chrono]
+version = "0.4"
+features = ["serde"]
