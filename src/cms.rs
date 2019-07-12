@@ -43,7 +43,7 @@ struct C {
     pub widget: serde_json::Value,
 }
 
-pub fn serve( req: &realm::Request, url: &str) -> realm::Result {
+pub fn layout( req: &realm::Request, url: &str) -> realm::Result {
     let content = match cms_content(url) {
         Ok(content) => content,
         Err(e) => {
