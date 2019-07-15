@@ -15,7 +15,7 @@ http = "~0.1.17"
 serde_json = "~1.0.0"
 serde = "~1.0.0"
 serde_derive = "~1.0.0"
-graft = "~0.1.7"
+graft = { path ="/Users/swapnil/forgit/graft"}
 realm = { path = "/Users/swapnil/forgit/dwelm/realm" }
 itertools = "~0.7.8"
 

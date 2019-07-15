@@ -1,9 +1,11 @@
+
 use crate::routes;
+use crate::cms;
 use realm::utils::{get_slash_complete_path, get, sub_string};
 use serde_json::Value;
 use std::{collections::HashMap, env};
-use graft::{self, Context, DirContext};
 use url::Url;
+use graft::{self, Context, DirContext};
 
 pub fn get_default_context(cms_path: &str) -> impl Context {
      let mut proj_dir = env::current_dir().expect("could not find current dir");
@@ -21,13 +23,9 @@ pub fn magic(req: &realm::Request) -> realm::Result {
     let data_: serde_json::Value = serde_json::from_slice(req.body().as_slice()).unwrap_or_else(|e| json!(null));
     let query_: HashMap<_, _> = url.query_pairs().into_owned().collect();
     match path.as_ref() {
-        "/" => {
-                let i: String = get("i", &query_, &data_, &mut rest, false)?;
-                routes::index::layout(req)
-        },
-        url_ => crate::cms::layout(req, get_default_context("cms"), url_)
+        "/" => routes::index::layout(req),
+        url_ => cms::layout(req, get_default_context("cms"), url_),
+        _ => unimplemented!()
     }
 }
 
-
-// TODO: Test with a post request.
