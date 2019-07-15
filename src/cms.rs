@@ -43,7 +43,7 @@ struct C {
     pub widget: serde_json::Value,
 }
 
-pub fn layout( req: &realm::Request, url: &str) -> realm::Result {
+pub fn layout( req: &realm::Request, context: impl Context, url: &str) -> realm::Result {
     let content = match cms_content(url) {
         Ok(content) => content,
         Err(e) => {
@@ -53,10 +53,7 @@ pub fn layout( req: &realm::Request, url: &str) -> realm::Result {
     };
 
     println!("content {:?}", content);
-    let mut proj_dir = env::current_dir().expect("could not find current dir");
 
-    let context =
-        DirContext::new(proj_dir.join("cms/includes"));
 
     //println!("context {:?}", context);
     let v = graft::convert(&content, &context)?;

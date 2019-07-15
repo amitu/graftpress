@@ -1,24 +1,33 @@
 use crate::routes;
 use realm::utils::{get_slash_complete_path, get, sub_string};
-use serde_json::Value as JsonValue;
-use std::collections::HashMap;
+use serde_json::Value;
+use std::{collections::HashMap, env};
+use graft::{self, Context, DirContext};
 use url::Url;
 
+pub fn get_default_context(cms_path: &str) -> impl Context {
+     let mut proj_dir = env::current_dir().expect("could not find current dir");
+
+
+    DirContext::new(proj_dir.join(cms_path).join("includes"))
+}
 
 pub fn magic(req: &realm::Request) -> realm::Result {
     let url = req.uri();
-    let site_url = "127.0.0.1:3000/".to_string();
+    let site_url = "http://127.0.0.1:3000".to_string();
     let path = get_slash_complete_path(url.path());
     let url = Url::parse(&format!("{}{}", &site_url, req.uri()).as_str())?;
     let mut rest = sub_string(path.as_ref(), path.len(), None);
-    let data_: JsonValue  = serde_json::from_slice(req.body().as_slice())?;
+    let data_: serde_json::Value = serde_json::from_slice(req.body().as_slice()).unwrap_or_else(|e| json!(null));
     let query_: HashMap<_, _> = url.query_pairs().into_owned().collect();
-
     match path.as_ref() {
         "/" => {
-            let i = get("i", &query_, &data_, &mut rest, false)?;
-            routes::index::layout(req, i)
+                let i: String = get("i", &query_, &data_, &mut rest, false)?;
+                routes::index::layout(req)
         },
-        _ => unimplemented!()
+        url_ => crate::cms::layout(req, get_default_context("cms"), url_)
     }
 }
+
+
+// TODO: Test with a post request.
