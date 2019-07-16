@@ -7,6 +7,19 @@ use std::io;
 use std::io::Read;
 
 
+pub fn get_context(cms_path: &str) -> impl Context {
+     let mut proj_dir = env::current_dir().expect("could not find current dir");
+    DirContext::new(proj_dir.join(cms_path).join("includes"))
+}
+
+pub fn get_default_context() -> impl Context {
+     let mut proj_dir = env::current_dir().expect("could not find current dir");
+    DirContext::new(proj_dir.join("cms").join("includes"))
+}
+
+
+
+
 fn try_cms(path: &str) -> crate::Result<String> {
     let mut proj_dir = env::current_dir().expect("could not find current dir");
 
