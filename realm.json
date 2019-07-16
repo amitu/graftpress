@@ -2,6 +2,7 @@
      "static_dir": "src/static",
      "elm_source_dirs": ["src/frontend"],
      "catchall": true,
-     "cms_dir": "cms"
+     "cms_dir": "cms",
+     "context": "realm::in_::In"
 
 }

@@ -1,8 +1,10 @@
-pub fn magic(req: realm::Request) -> realm::Result {
-    let req_conf = realm::RequestConfig::new(req)?;
-    match realm::utils::get_slash_complete_path(req.uri().path()).as_ref() {
-        "/" => crate::routes::index::layout(&req_conf.req),
-        url_ => crate::cms::layout(&req_conf.req, crate::cms::get_context("cms"), url_),
+
+pub fn magic(ireq: realm::in_::In) -> realm::Result {
+    let req = ireq.realm_request;
+    let input = realm::request_config::RequestConfig::new(req)?;
+    match input.path.as_str() {
+            url_ => crate::cms::layout(&input.req, crate::cms::get_context("cms"), url_),
+        "/" => crate::routes::index::layout(&input.req,),
         _ => unimplemented!()
     }
 }

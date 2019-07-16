@@ -75,7 +75,7 @@ pub fn layout( req: &realm::Request, context: impl Context, url: &str) -> realm:
     println!("c: {:#?}", &c);
 
     let spec = serde_json::from_value(c.widget)?;
-    //println!("spec {}", spec);
+    //println!("spec {:?}", spec);
 
     realm::HTML::new().title("index").render_to_response(spec)
 }
