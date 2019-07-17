@@ -1,6 +1,6 @@
 extern crate realm;
 extern crate graftpress;
 
-use graftpress::forward::magic;
+use graftpress::middleware;
 
-realm::realm!{magic}
+realm::realm!{middleware::middleware}
