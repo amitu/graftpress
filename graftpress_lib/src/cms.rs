@@ -14,10 +14,8 @@ pub fn get_context(cms_path: &str) -> impl Context {
 
 pub fn get_default_context() -> impl Context {
      let mut proj_dir = env::current_dir().expect("could not find current dir");
-    DirContext::new(proj_dir.join("cms").join("includes"))
+    DirContext::new(proj_dir.join("..").join("cms").join("includes"))
 }
-
-
 
 
 fn try_cms(path: &str) -> crate::Result<String> {

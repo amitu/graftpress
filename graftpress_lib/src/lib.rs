@@ -12,19 +12,11 @@ extern crate itertools;
 extern crate chrono;
 
 
-pub mod middleware;
-mod forward;
-mod pages;
-mod reverse;
-mod routes;
-mod widgets;
+pub mod forward;
 mod cms;
-<<<<<<< HEAD
-pub mod middleware;
-=======
-mod in_;
+mod reverse;
 
->>>>>>> 8fe523b4da4067ef58c5c4e4a00123791facfda0
+
 
 
 pub type Result<T> = std::result::Result<T, failure::Error>;

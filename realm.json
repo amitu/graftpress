@@ -1,8 +1,10 @@
 {
-     "static_dir": "src/static",
-     "elm_source_dirs": ["src/frontend"],
+     "static_dir": "examples/blog/static",
+     "elm_source_dirs": ["examples/blog/frontend"],
+     "elm_bin_path": "examples/blog",
      "catchall": true,
      "cms_dir": "cms",
-     "context": "crate::in_::In"
+     "context": "crate::in_::In",
+     "loader_file": "examples/blog/node_modules/realm_javascript/lib/loader.js"
 
 }
