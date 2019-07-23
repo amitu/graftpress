@@ -18,6 +18,7 @@ mod reverse;
 mod routes;
 mod widgets;
 mod cms;
+pub mod middleware;
 
 
 pub type Result<T> = std::result::Result<T, failure::Error>;
