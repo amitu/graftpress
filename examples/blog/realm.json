@@ -1,0 +1,9 @@
+{
+     "static_dir": "static",
+     "elm_source_dirs": ["frontend"],
+     "elm_bin_path": "",
+     "catchall": true,
+     "cms_dir": "cms",
+     "loader_file": "node_modules/realm_javascript/lib/loader.js"
+
+}
