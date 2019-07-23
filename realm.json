@@ -3,6 +3,6 @@
      "elm_source_dirs": ["src/frontend"],
      "catchall": true,
      "cms_dir": "cms",
-     "context": "realm::in_::In"
+     "context": "crate::in_::In"
 
 }
