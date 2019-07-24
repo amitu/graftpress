@@ -1,0 +1,7 @@
+{
+     "static_dir": "static",
+     "elm_source_dirs": ["frontend"],
+     "elm_bin_path": "",
+     "catchall": "url_ => crate::cms::layout(&input.req, crate::cms::get_context(\"cms\"), url_)"
+
+}

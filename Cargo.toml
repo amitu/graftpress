@@ -6,7 +6,7 @@ edition = "2018"
 
 
 [dependencies]
-realm = "0.1.4"
+realm = {path = "/Users/swapnil/forgit/ackotech/realm"}
 graftpress_lib = {path = "graftpress_lib"}
 futures = "~0.1.26"
 hyper = "~0.12.27"

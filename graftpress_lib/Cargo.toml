@@ -17,7 +17,7 @@ serde = "~1.0.0"
 serde_derive = "~1.0.0"
 graft = "0.1.7"
 itertools = "~0.7.8"
-realm = "0.1.4"
+realm = {path = "/Users/swapnil/forgit/ackotech/realm"}
 
 [dependencies.chrono]
 version = "0.4"
