@@ -77,7 +77,7 @@ def handle_debug():
     
     elm_dest_dir: str = "static/realm/elatest/"
     
-    elm_src_dirs: List[str] = ["src/frontend"]
+    elm_src_dirs: List[str] = ["frontend"]
     
 
     ce.check_conflicts(elm_src_dirs)

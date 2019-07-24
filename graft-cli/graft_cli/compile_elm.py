@@ -9,9 +9,9 @@ home: str = expanduser("~")
 def compile(
     source_path: str,
     destination_path: str,
-    elm_path: str = elm_path_G,
-    elm_format_path: str = elm_format_path_G,
-    elm_proj_dir: str = go_to_dir_G,
+    elm_path: str ,
+    elm_format_path: str ,
+    elm_proj_dir: str ,
 ):
 
     if elm_proj_dir:
