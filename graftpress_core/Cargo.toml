@@ -2,6 +2,8 @@
 name = "graftpress_core"
 version = "0.1.0"
 authors = ["nilinswap <nilinswap@gmail.com>"]
+description = "Library to provide tools required for graftpress"
+license = "BSD-2-Clause"
 edition = "2018"
 
 [dependencies]
