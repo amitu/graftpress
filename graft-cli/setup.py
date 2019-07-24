@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="graft_cli",
-    version="0.0.2",
+    version="0.0.5",
     entry_points={"console_scripts": ["graft-cli=graft_cli.main:main"]},
     author="nilinswap",
     author_email="nilinswap@gmail.com",

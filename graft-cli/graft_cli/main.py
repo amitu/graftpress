@@ -66,24 +66,7 @@ def handle_init():
 
 def handle_debug():
     
-    curr_dir: str = os.getcwd()
-    print("curr_dir, ", curr_dir)
-    
-    bin_path: str = os.path.join(curr_dir, "node_modules", ".bin")
-
-    elm_path: str = os.path.join(bin_path, "elm")
-   
-    elm_format_path: str = os.path.join(bin_path, "elm-format")
-    
-    elm_dest_dir: str = "static/realm/elatest/"
-    
-    elm_src_dirs: List[str] = ["frontend"]
-    
-
-    ce.check_conflicts(elm_src_dirs)
-    for src_dir in elm_src_dirs:
-        ce.compile_all_elm(src_dir, elm_dest_dir, elm_path, elm_format_path, "")
-    os.system("RUST_BACKTRACE=1 cargo run")
+    pass
 
 
 def handle_build():
@@ -96,13 +79,21 @@ def handle_build():
     
     elm_format_path: str = os.path.join(bin_path, "elm-format")
     
-    elm_dest_dir: str = "static/realm/elatest/"
+    elm_dest_dir: str = "static/realm/elatest"
     if not os.path.isdir(elm_dest_dir):
         os.system("mkdir -p " + elm_dest_dir)
+    
     
     with open("static/realm/latest.txt", "w+") as file:
         file.write("elatest")
     
     with open("static/realm/elatest/deps.json", "w+") as file:
         file.write("{}")
+
+
+    elm_src_dirs: List[str] = ["frontend"]
+
+    ce.check_conflicts(elm_src_dirs)
+    for src_dir in elm_src_dirs:
+        ce.compile_all_elm(src_dir, elm_dest_dir, elm_path, elm_format_path, "")
     
