@@ -1,4 +1,4 @@
 extern crate realm;
-extern crate graftpress_lib;
+extern crate graftpress_core;
 
-realm::realm!{graftpress_lib::forward::magic}
+realm::realm!{graftpress_core::forward::magic}

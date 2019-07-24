@@ -1,5 +1,5 @@
 [package]
-name = "graftpress_lib"
+name = "graftpress_core"
 version = "0.1.0"
 authors = ["nilinswap <nilinswap@gmail.com>"]
 edition = "2018"
@@ -17,7 +17,8 @@ serde = "~1.0.0"
 serde_derive = "~1.0.0"
 graft = "0.1.7"
 itertools = "~0.7.8"
-realm = {path = "/Users/swapnil/forgit/ackotech/realm"}
+realm = "0.1.6"
+
 
 [dependencies.chrono]
 version = "0.4"
