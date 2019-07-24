@@ -61,6 +61,7 @@ def handle_version():
 
 
 def handle_init():
+    os.system("yarn add package.json")
     pass
 
 
@@ -90,7 +91,7 @@ def handle_build():
     with open("static/realm/elatest/deps.json", "w+") as file:
         file.write("{}")
 
-
+    
     elm_src_dirs: List[str] = ["frontend"]
 
     ce.check_conflicts(elm_src_dirs)
