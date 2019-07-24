@@ -8,8 +8,8 @@ edition = "2018"
 
 
 [dependencies]
-realm = "0.1.6"
-graftpress_core = {path = "graftpress_core"}
+realm = "^0.1.6"
+graftpress_core = "^0.1.0"
 futures = "~0.1.26"
 hyper = "~0.12.27"
 http = "~0.1.17"
