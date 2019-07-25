@@ -8,9 +8,9 @@ with open("README.md", "r") as fh:
 
 
 setup(
-    name="graft_cli",
-    version="0.0.6",
-    entry_points={"console_scripts": ["graft-cli=graft_cli.main:main"]},
+    name="graftpress_cli",
+    version="0.0.1",
+    entry_points={"console_scripts": ["graftpress-cli=graftpress_cli.main:main"]},
     author="nilinswap",
     author_email="nilinswap@gmail.com",
     description="A command line utitily to provide services offered by graftpress( a graft-elm web framework).",

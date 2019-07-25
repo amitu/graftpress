@@ -3,7 +3,7 @@ import re
 from typing import List, Tuple, Optional, Match
 from string import Template
 import json
-import graft_cli.p_assert as pa
+import graftpress_cli.p_assert as pa
 
 REALM_CONFIG = {}
 

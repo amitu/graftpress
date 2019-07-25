@@ -3,8 +3,8 @@ import cookiecutter
 from cookiecutter.main import cookiecutter
 import os
 
-import graft_cli.compile_elm as ce
-import graft_cli.rust_json as rj
+import graftpress_cli.compile_elm as ce
+import graftpress_cli.rust_json as rj
 import json
 from typing import List
 
@@ -16,23 +16,23 @@ def main():
     if len(sys.argv) == 1:
         print(
             f"""\
-Hi, thank you for trying out graft-cli {VERSION} . I hope you like it!
+Hi, thank you for trying out graftpress-cli {VERSION} . I hope you like it!
 
 ----------------------------------------------------------------------------
 I highly recommend walking throught https://www.graftpress.com to get
-started. It teaches many important concepts, including how to use graft-cli
+started. It teaches many important concepts, including how to use graftpress-cli
 in terminal.
 ----------------------------------------------------------------------------
 
 The most common commonds are:
 
-    graft-cli init <proj_name>
+    graftpress-cli init <proj_name>
         create a new project graftpress project.
 
-    graft-cli build
+    graftpress-cli build
          build the current graftpress project.
 
-    graft-cli run
+    graftpress-cli run
          run the current graftpress project.
 
 Be sure to ask on https://gitter.im/amitu/graftpress if you run into trouble! Folks
@@ -61,7 +61,6 @@ def handle_version():
 
 
 def handle_init():
-    os.system("yarn add package.json")
     pass
 
 
@@ -69,8 +68,9 @@ def handle_debug():
     
     pass
 
-
 def handle_build():
+    if not os.path.isdir("node_modules"):
+        os.system("yarn add package.json")
     curr_dir: str = os.getcwd()
     print("curr_dir, ", curr_dir)
     
