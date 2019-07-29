@@ -144,6 +144,7 @@ def handle_publish(publish_folder, read_folder = "cms"):
     print("lis_walk", lis_walk)
     
     for root, dirs, files in lis_walk:
+        #print("groot", root)
         url_path = root.split(read_folder)[1]
         if not url_path.endswith("/"):
             url_path += "/"
@@ -164,14 +165,14 @@ def handle_publish(publish_folder, read_folder = "cms"):
                 if ext != "graft":
                     pass
                 output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path) + file_name
-                
+                url_path += file_name + "/"
                 output_path = output_folder.rstrip("/") + "/" + "index.html"
             
             
             if not os.path.isdir(output_folder):
                 print(output_folder)
                 os.makedirs(output_folder)
-                
+            
             os.system("wget -m 127.0.0.1:3000/" + url_path.lstrip("/") + " -O " + output_path)
             
     
