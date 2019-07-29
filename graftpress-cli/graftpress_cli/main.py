@@ -49,12 +49,16 @@ be kind to get best results!
     elif sys.argv[1] == "debug":
         handle_debug()
     elif sys.argv[1] == "publish":
-        if len(sys.argv) < 3:
-            os.makedirs("docs")
+        if len(sys.argv) >= 3:
+            o_path = sys.argv[2]
+        else:
             o_path = "docs"
-        o_path = sys.argv[2]
+        
+        
         if not o_path.startswith("/"):
             o_path = os.getcwd() + "/" + o_path
+        if not os.path.isdir(o_path):
+            os.makedirs(o_path)
         handle_publish(o_path)
     elif sys.argv[1] == "build":
         handle_build()
@@ -168,7 +172,7 @@ def handle_publish(publish_folder, read_folder = "cms"):
                 print(output_folder)
                 os.makedirs(output_folder)
                 
-            os.system("wget -m 127.0.0.1:3000/" + url_path.lstrip("/") + " -o " + output_path )
+            os.system("wget -m 127.0.0.1:3000/" + url_path.lstrip("/") + " -O " + output_path)
             
     
 
