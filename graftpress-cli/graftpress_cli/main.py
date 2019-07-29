@@ -97,4 +97,48 @@ def handle_build():
     ce.check_conflicts(elm_src_dirs)
     for src_dir in elm_src_dirs:
         ce.compile_all_elm(src_dir, elm_dest_dir, elm_path, elm_format_path, "")
+
+
+def format_url(u):
+    if u == "/":
+        return ""
+    return u
+
+def handle_publish(publish_folder = "docs"):
     
+    for root, dirs, files in os.walk("cms"):
+        url_path = root.strip("cms")
+        if not url_path.endswith("/"):
+            url_path += "/"
+        
+        if "include" in root:
+            continue
+            
+            
+        
+        for file in files:
+            if file == "index.graft":
+                output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path)
+                
+                output_path = output_folder +"index.html"
+            else:
+                file_name, ext = os.path.splitext(file)
+                
+                if ext != "graft":
+                    pass
+                output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path) + file_name
+                
+                output_path = output_folder + "/" + "index.html"
+            
+            
+            if not os.path.isdir(output_folder):
+                print(output_folder)
+                os.makedirs(output_folder)
+                
+            os.system("wget -m 127.0.0.1:3000/" + url_path.lstrip("/") + " -o " + output_path )
+            
+    
+
+            
+        
+        
