@@ -48,10 +48,19 @@ be kind to get best results!
         handle_init()
     elif sys.argv[1] == "debug":
         handle_debug()
+    elif sys.argv[1] == "publish":
+        if len(sys.argv) < 3:
+            os.makedirs("docs")
+            o_path = "docs"
+        o_path = sys.argv[2]
+        if not o_path.startswith("/"):
+            o_path = os.getcwd() + "/" + o_path
+        handle_publish(o_path)
     elif sys.argv[1] == "build":
         handle_build()
     elif sys.argv[1] == "test":
         rj.test()
+    
     else:
         print(f"unknown command: {sys.argv[1]}")
 
@@ -104,7 +113,7 @@ def format_url(u):
         return ""
     return u
 
-def handle_publish(publish_folder = "docs"):
+def handle_publish(publish_folder):
     
     for root, dirs, files in os.walk("cms"):
         url_path = root.strip("cms")
