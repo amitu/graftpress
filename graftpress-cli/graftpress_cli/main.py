@@ -70,17 +70,17 @@ def handle_version():
 
 
 def publish_test():
-    handle_publish("tests/publish/test_arg", "tests/publish/test_res")
+    handle_publish("tests/publish/test_res", "tests/publish/test_arg/cms")
     lis_r = []
     for root, dirs, files in os.walk("tests/publish/test_res"):
         for file in files:
-            lis_r.append((root.strip("tests/publish/test_res"), file))
+            lis_r.append((root.split("tests/publish/test_res")[0], file))
 
 
     lis_t = []
     for root, dirs, files in os.walk("tests/publish/test_tar"):
         for file in files:
-            lis_t.append((root.strip("tests/publish/test_tar"), file))
+            lis_t.append((root.split("tests/publish/test_tar")[0], file))
     
     print(lis_r, lis_t)
     assert(lis_r == lis_t)
@@ -128,10 +128,10 @@ def format_url(u):
         return ""
     return u
 
-def handle_publish(publish_folder, read_folder = "."):
+def handle_publish(publish_folder, read_folder = "cms"):
     #handle absence of publish_folder
-    for root, dirs, files in os.walk("cms"):
-        url_path = root.strip("cms")
+    for root, dirs, files in os.walk(read_folder):
+        url_path = root.split(read_folder)[1]
         if not url_path.endswith("/"):
             url_path += "/"
         
