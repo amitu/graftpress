@@ -74,15 +74,19 @@ def publish_test():
     lis_r = []
     for root, dirs, files in os.walk("tests/publish/test_res"):
         for file in files:
-            lis_r.append((root.split("tests/publish/test_res")[0], file))
+            lis_r.append((root.split("tests/publish/test_res")[1], file))
 
 
     lis_t = []
     for root, dirs, files in os.walk("tests/publish/test_tar"):
         for file in files:
-            lis_t.append((root.split("tests/publish/test_tar")[0], file))
+            lis_t.append((root.split("tests/publish/test_tar")[1], file))
     
-    print(lis_r, lis_t)
+    set_res = set(lis_r)
+    set_tar = set(lis_t)
+    print(set_res)
+    print(set_tar)
+    print("diff",set_res - set_tar)
     assert(lis_r == lis_t)
 def handle_init():
     pass
@@ -130,7 +134,12 @@ def format_url(u):
 
 def handle_publish(publish_folder, read_folder = "cms"):
     #handle absence of publish_folder
+    lis_walk = []
     for root, dirs, files in os.walk(read_folder):
+        lis_walk.append((root, dirs, files))
+    print("lis_walk", lis_walk)
+    
+    for root, dirs, files in lis_walk:
         url_path = root.split(read_folder)[1]
         if not url_path.endswith("/"):
             url_path += "/"
@@ -141,7 +150,7 @@ def handle_publish(publish_folder, read_folder = "cms"):
             
         
         for file in files:
-            if file == "index.html":
+            if file == "index.graft":
                 output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path)
                 
                 output_path = output_folder +"index.html"
@@ -152,7 +161,7 @@ def handle_publish(publish_folder, read_folder = "cms"):
                     pass
                 output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path) + file_name
                 
-                output_path = output_folder + "/" + "index.html"
+                output_path = output_folder.rstrip("/") + "/" + "index.html"
             
             
             if not os.path.isdir(output_folder):
