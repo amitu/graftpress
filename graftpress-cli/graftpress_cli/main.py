@@ -159,21 +159,22 @@ def handle_publish(publish_folder, read_folder = "cms"):
                 output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path)
                 
                 output_path = output_folder +"index.html"
+                url_path_ = url_path
             else:
                 file_name, ext = os.path.splitext(file)
                 
                 if ext != "graft":
                     pass
                 output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path) + file_name
-                url_path += file_name + "/"
+                url_path_ = url_path + file_name + "/"
                 output_path = output_folder.rstrip("/") + "/" + "index.html"
             
             
             if not os.path.isdir(output_folder):
                 print(output_folder)
                 os.makedirs(output_folder)
-            
-            os.system("wget -m 127.0.0.1:3000/" + url_path.lstrip("/") + " -O " + output_path)
+            print("output_path",output_path )
+            os.system("wget -m 127.0.0.1:3000/" + url_path_.lstrip("/") + " -O " + output_path)
             
     
 
