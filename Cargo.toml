@@ -1,6 +1,6 @@
 [package]
 name = "graftpress"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["nilinswap <nilinswap@gmail.com>"]
 description = "Binary providing graftpress command-line utilities"
 license = "BSD-2-Clause"
@@ -8,8 +8,8 @@ edition = "2018"
 
 
 [dependencies]
-realm = "^0.1.6"
-graftpress_core = "^0.1.0"
+realm = "^0.1.7"
+graftpress_core = "^0.1.1"
 futures = "~0.1.26"
 hyper = "~0.12.27"
 http = "~0.1.17"

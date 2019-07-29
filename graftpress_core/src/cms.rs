@@ -54,12 +54,12 @@ struct C {
     pub widget: serde_json::Value,
 }
 
-pub fn layout( req: &realm::Request, context: impl Context, url: &str) -> realm::Result {
+pub fn layout(req: &realm::Request, context: impl Context, url: &str) -> realm::Result {
     let content = match cms_content(url) {
         Ok(content) => content,
         Err(e) => {
-            //return Ok(AckoResponse::Http404(url.to_owned()));
-            return Err(e);
+            return Ok(realm::utils::not_found());
+            //return Err(e);
         }
     };
 
