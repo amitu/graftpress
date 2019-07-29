@@ -42,7 +42,7 @@ pub fn cms_content(path: &str) -> crate::Result<String> {
     };
     match try_cms(&format!("cms/{}.graft", &path).as_str()) {
         Ok(content) => Ok(content),
-        Err(_) => try_cms(&format!("cms/{}/index.graft", path).as_str()),
+        Err(_) => try_cms(&format!("cms/{}/index.html", path).as_str()),
     }
 }
 

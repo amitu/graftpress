@@ -59,7 +59,7 @@ be kind to get best results!
     elif sys.argv[1] == "build":
         handle_build()
     elif sys.argv[1] == "test":
-        rj.test()
+        publish_test()
     
     else:
         print(f"unknown command: {sys.argv[1]}")
@@ -69,6 +69,21 @@ def handle_version():
     print(VERSION)
 
 
+def publish_test():
+    handle_publish("tests/publish/test_arg", "tests/publish/test_res")
+    lis_r = []
+    for root, dirs, files in os.walk("tests/publish/test_res"):
+        for file in files:
+            lis_r.append((root.strip("tests/publish/test_res"), file))
+
+
+    lis_t = []
+    for root, dirs, files in os.walk("tests/publish/test_tar"):
+        for file in files:
+            lis_t.append((root.strip("tests/publish/test_tar"), file))
+    
+    print(lis_r, lis_t)
+    assert(lis_r == lis_t)
 def handle_init():
     pass
 
@@ -113,8 +128,8 @@ def format_url(u):
         return ""
     return u
 
-def handle_publish(publish_folder):
-    
+def handle_publish(publish_folder, read_folder = "."):
+    #handle absence of publish_folder
     for root, dirs, files in os.walk("cms"):
         url_path = root.strip("cms")
         if not url_path.endswith("/"):
@@ -126,7 +141,7 @@ def handle_publish(publish_folder):
             
         
         for file in files:
-            if file == "index.graft":
+            if file == "index.html":
                 output_folder = publish_folder.rstrip("/") + "/" + format_url(url_path)
                 
                 output_path = output_folder +"index.html"
@@ -149,5 +164,6 @@ def handle_publish(publish_folder):
     
 
             
-        
+
+publish_test()
         
