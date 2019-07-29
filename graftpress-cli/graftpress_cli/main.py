@@ -177,6 +177,3 @@ def handle_publish(publish_folder, read_folder = "cms"):
     
 
             
-
-publish_test()
-        
